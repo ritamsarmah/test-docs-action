@@ -11,6 +11,8 @@ async function main() {
         const action = getInput("action");
         const filePaths = getInput("file-paths").split(" ");
 
+        console.log("test change");
+
         switch (action) {
             case "upload":
                 await uploadFiles(filePaths);
