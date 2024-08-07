@@ -104,7 +104,7 @@ export async function uploadFiles(filePaths) {
         });
 
         const accessToken = await authenticate(userId, userSecret);
-        const jobName = `${context.sha} - ${context.ref_name}`;
+        const jobName = `${context.sha} - ${context.ref}`;
         const jobUid = await createJob(jobName, projectId, accessToken);
 
         const fileUris = Object.keys(data);

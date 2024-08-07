@@ -38310,7 +38310,7 @@ async function uploadFiles(filePaths) {
         });
 
         const accessToken = await authenticate(userId, userSecret);
-        const jobName = `${github.context.sha} - ${github.context.ref_name}`;
+        const jobName = `${github.context.sha} - ${github.context.ref}`;
         const jobUid = await createJob(jobName, projectId, accessToken);
 
         const fileUris = Object.keys(data);
