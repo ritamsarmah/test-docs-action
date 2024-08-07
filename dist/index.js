@@ -37991,8 +37991,6 @@ async function main() {
         const action = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("action");
         const filePaths = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)("file-paths").split(" ");
 
-        console.log("test change");
-
         switch (action) {
             case "upload":
                 await (0,_upload_js__WEBPACK_IMPORTED_MODULE_2__/* .uploadFiles */ .I)(filePaths);
