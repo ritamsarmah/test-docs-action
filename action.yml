@@ -1,0 +1,25 @@
+name: "Docs Localization Action"
+description: "Localize files using Smartling"
+author: "AppLovin Corporation"
+
+inputs:
+    action:
+        description: "The action to perform (upload/update)"
+        required: true
+    filePaths:
+        description: "The modified file paths"
+        required: true
+    smartling-user-id:
+        description: "Smartling User ID"
+        required: true
+    smartling-user-secret:
+        description: "Smartling User Secret"
+        required: true
+
+outputs:
+    status:
+        description: "status"
+
+runs:
+    using: "node20"
+    main: "dist/index.js"
