@@ -1,4 +1,5 @@
 import { setOutput, setFailed, getInput } from "@actions/core";
+import { context } from "@actions/github";
 import { uploadFiles } from "./upload.js";
 import { updateFiles } from "./update.js";
 import { handleError } from "./utils.js";
@@ -16,7 +17,7 @@ async function main() {
                 setOutput("status", "Successfully uploaded files to Smartling");
                 break;
             case "update":
-                await updateFiles(filePaths);
+                // await updateFiles(filePaths);
                 setOutput("status", "Successfully updated local source files");
                 break;
             default:

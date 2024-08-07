@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 
 import { getInput } from "@actions/core";
+import { context } from "@actions/github";
 import {
     authenticate,
     createBatch,
@@ -103,7 +104,8 @@ export async function uploadFiles(filePaths) {
         });
 
         const accessToken = await authenticate(userId, userSecret);
-        const jobUid = await createJob("test", projectId, accessToken); // TODO: Name job based on commit
+        const jobName = `${context.sha} - ${context.ref_name}`;
+        const jobUid = await createJob(jobName, projectId, accessToken);
 
         const fileUris = Object.keys(data);
         const batchUid = await createBatch(
